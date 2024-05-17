@@ -1,5 +1,6 @@
 search = document.querySelector('#search-button');
 result = document.querySelector('.right-box');
+resultAll = document.querySelectorAll('.right-box');
 cart = document.querySelector('.cart-container');
 cartmenu = document.querySelector('#cart-menu');
 
@@ -8,7 +9,7 @@ search.addEventListener('click', () => {
     const departureInput = document.querySelector('#departure-input');
     const arrivalInput = document.querySelector('#arrival-input');
     const calendarInput = document.querySelector('#calendar-input');
-    
+
 
     // Récupérer les valeurs des champs de saisie
     const departure = departureInput.value;
@@ -17,9 +18,17 @@ search.addEventListener('click', () => {
 
     // http://localhost:3000/trips?departure=Paris&arrival=Lyon&date=2024-05-15
     // Effectuer une requête  avec fetch
+
     fetch(`http://localhost:3000/trips?departure=${departure}&arrival=${arrival}&date=${date}`)
     .then(response => response.json())
     .then(data => {
+        // Suppression contenu css pour ajout traitement données
+        resultAll.forEach(item => {
+            while (item.firstChild) {
+                item.removeChild(item.firstChild);
+            }
+        });
+
         // Traiter les données de réponse
         if (data) {
             console.log(data);
@@ -35,7 +44,7 @@ search.addEventListener('click', () => {
             });
         }
     })
-        
+
 });
 
 
