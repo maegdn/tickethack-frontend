@@ -42,6 +42,14 @@ search.addEventListener('click', () => {
                     <button id="book-button">Book</button>
                     </div>`;
             });
+        } else {
+                result.innerHTML = `
+                <div>
+                <img id="notfound-image" src="images/notfound.png">
+                </div>
+                <hr id="green-line">
+                <p id="notrip-phrase">No trip found.</p>
+                `
         }
     })
 
