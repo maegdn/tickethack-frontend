@@ -33,12 +33,14 @@ search.addEventListener('click', () => {
         if (data.length > 0) {
             console.log(data);
             data.forEach(trip => {
+            let regexTime = /:\d{2}/;
+            console.log(regexTime);
                 // Créer des éléments HTML pour afficher chaque trajet
                 result.innerHTML += `
                     <div id="result">
-                    <span id="trip">${departure} > ${arrival}</span>
-                    <span id="time">16:23</span>
-                    <span id="price">126€</span>
+                    <span id="trip">${trip.departure} > ${trip.arrival}</span>
+                    <span id="time">${trip.date}</span>
+                    <span id="price">${trip.price}€</span>
                     <button id="book-button">Book</button>
                     </div>`;
             });
@@ -57,8 +59,28 @@ search.addEventListener('click', () => {
 });
 
 
+// const book = document.querySelectorAll('book-button');
 
-// notrip found result
+// book.addEventListener('click', () => {
+//     // fonction changement de statut du trip en booked
+
+
+//     // affichage du  trip au statut booked dans le html du cart
+
+//     cart.innerHTML = `
+//    <div id="cart-result">
+//     <span id="trip">Paris > Lyon</span>
+//     <span id="time">16:23</span>
+//     <span id="price">126€</span>
+//     <button id="cart-delete">X</button>
+//     </div>
+
+// // `
+// })
+
+
+
+// NO TRIP FOUND RESULT HTML CODE
 
 // search.addEventListener('click', () => {
 // result.innerHTML = `
@@ -70,7 +92,7 @@ search.addEventListener('click', () => {
 // `
 // })
 
-// trips found and list
+// RESULTS OF SEARCH FOR TRIP HTML CODE
 
 // search.addEventListener('click', () => {
 //     result.innerHTML = `
