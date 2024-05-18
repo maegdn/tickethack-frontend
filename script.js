@@ -43,7 +43,7 @@ search.addEventListener('click', () => {
                     </div>`;
             });
         } else {
-                result.innerHTML = `
+                result.innerHTML += `
                 <div>
                 <img id="notfound-image" src="images/notfound.png">
                 </div>
