@@ -41,18 +41,17 @@ search.addEventListener('click', () => {
                     <span id="price">126€</span>
                     <button id="book-button">Book</button>
                     </div>`;
-                });
-            } else {
+            });
+        } else {
                 result.innerHTML = `
-                    <div id="trip-notfound">
-                    <div>
-                    <img id="notfound-image" src="images/notfound.png">
-                    </div> 
-                    <hr id="green-line">
-                    <p>No trip found</p>
-                    </div>`;
-            }
-        })
+                <div>
+                <img id="notfound-image" src="images/notfound.png">
+                </div>
+                <hr id="green-line">
+                <p id="notrip-phrase">No trip found.</p>
+                `
+        }
+    })
 
 });
 
