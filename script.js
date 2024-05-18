@@ -29,12 +29,12 @@ search.addEventListener('click', () => {
                 }
             });
 
-            // Traiter les données de réponse
-            if (data) {
-                console.log(data);
-                data.forEach(trip => {
-                    // Créer des éléments HTML pour afficher chaque trajet
-                    result.innerHTML += `
+        // Traiter les données de réponse
+        if (data.length > 0) {
+            console.log(data);
+            data.forEach(trip => {
+                // Créer des éléments HTML pour afficher chaque trajet
+                result.innerHTML += `
                     <div id="result">
                     <span id="trip">${departure} > ${arrival}</span>
                     <span id="time">16:23</span>
@@ -42,8 +42,9 @@ search.addEventListener('click', () => {
                     <button id="book-button">Book</button>
                     </div>`;
             });
-        } else {
-                result.innerHTML += `
+        }
+        else {
+                result.innerHTML = `
                 <div>
                 <img id="notfound-image" src="images/notfound.png">
                 </div>
@@ -54,9 +55,6 @@ search.addEventListener('click', () => {
     })
 
 });
-
-
-
 
 
 
@@ -76,55 +74,6 @@ search.addEventListener('click', () => {
 
 // search.addEventListener('click', () => {
 //     result.innerHTML = `
-//     <div id="result">
-//     <span id="trip">Paris > Lyon</span>
-//     <span id="time">16:23</span>
-//     <span id="price">126€</span>
-//     <button id="book-button">Book</button>
-//     </div>
-
-//     <div id="result">
-//     <span id="trip">Paris > Lyon</span>
-//     <span id="time">16:23</span>
-//     <span id="price">126€</span>
-//     <button id="book-button">Book</button>
-//     </div>
-
-//     <div id="result">
-//     <span id="trip">Paris > Lyon</span>
-//     <span id="time">16:23</span>
-//     <span id="price">126€</span>
-//     <button id="book-button">Book</button>
-//     </div>
-
-//     <div id="result">
-//     <span id="trip">Paris > Lyon</span>
-//     <span id="time">16:23</span>
-//     <span id="price">126€</span>
-//     <button id="book-button">Book</button>
-//     </div>
-
-//     <div id="result">
-//     <span id="trip">Paris > Lyon</span>
-//     <span id="time">16:23</span>
-//     <span id="price">126€</span>
-//     <button id="book-button">Book</button>
-//     </div>
-
-//     <div id="result">
-//     <span id="trip">Paris > Lyon</span>
-//     <span id="time">16:23</span>
-//     <span id="price">126€</span>
-//     <button id="book-button">Book</button>
-//     </div>
-
-//     <div id="result">
-//     <span id="trip">Paris > Lyon</span>
-//     <span id="time">16:23</span>
-//     <span id="price">126€</span>
-//     <button id="book-button">Book</button>
-//     </div>
-
 //     <div id="result">
 //     <span id="trip">Paris > Lyon</span>
 //     <span id="time">16:23</span>
